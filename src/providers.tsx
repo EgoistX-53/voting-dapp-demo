@@ -18,7 +18,6 @@ const config = createConfig({
     ...getDefaultWallets({
         appName: 'Voting DApp',
         projectId: 'YOUR_PROJECT_ID',
-        chains: [sepolia],
     }),
     ssr: true,
 });
@@ -33,7 +32,7 @@ export function Providers({ children }: ProvidersProps) {
     return (
         <WagmiProvider config={config}>
             <QueryClientProvider client={queryClient}>
-                <RainbowKitProvider chains={[sepolia]}>
+                <RainbowKitProvider>
                     {children}
                 </RainbowKitProvider>
             </QueryClientProvider>
