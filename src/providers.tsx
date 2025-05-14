@@ -10,15 +10,19 @@ import { sepolia } from 'wagmi/chains';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactNode } from 'react';
 
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+
+const { connectors } = getDefaultWallets({
+    appName: 'Voting DApp',
+    projectId: API_KEY!
+});
+
 const config = createConfig({
     chains: [sepolia],
+    connectors,
     transports: {
         [sepolia.id]: http(),
     },
-    ...getDefaultWallets({
-        appName: 'Voting DApp',
-        projectId: 'YOUR_PROJECT_ID',
-    }),
     ssr: true,
 });
 
