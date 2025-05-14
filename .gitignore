@@ -1,8 +1,15 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ======================
+# Node.js dependencies
+# ======================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
 
-# dependencies
-/node_modules
-/.pnp
+# ======================
+# Yarn & PnP
+# ======================
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -10,68 +17,55 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# next.js
+# ======================
+# Build & Output
+# ======================
+/dist/
+/build/
+/.out/
 /.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
+out/
 *.tsbuildinfo
 next-env.d.ts
 
-node_modules
+# ======================
+# Environment variables
+# ======================
 .env
+.env.*
 
-# Hardhat files
-/cache
-/artifacts
+# ======================
+# Logs
+# ======================
+logs/
+*.log
 
-# TypeChain files
-/typechain
-/typechain-types
+# ======================
+# OS & Misc
+# ======================
+.DS_Store
+Thumbs.db
+*.pem
 
-# solidity-coverage files
-/coverage
+# ======================
+# IDE / Editor folders
+# ======================
+.vscode/
+.idea/
+.vs/
+
+# ======================
+# Hardhat specific
+# ======================
+/artifacts/
+/cache/
+/coverage/
 /coverage.json
-
-# Hardhat Ignition default folder for deployments against a local node
+/typechain/
+/typechain-types/
 ignition/deployments/chain-31337
 
-node_modules
-.env
-
-# Hardhat files
-/cache
-/artifacts
-
-# TypeChain files
-/typechain
-/typechain-types
-
-# solidity-coverage files
-/coverage
-/coverage.json
-
-# Hardhat Ignition default folder for deployments against a local node
-ignition/deployments/chain-31337
+# ======================
+# Vercel / Deployment
+# ======================
+.vercel/
